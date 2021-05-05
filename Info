@@ -1,0 +1,18 @@
+pybabel extract -o po/func.pot module/func.py
+
+pybabel init -D app -i po/func.pot -d po -l ru -o po/ru/LC_MESSAGES/func.po
+
+pybabel compile -D app -i po/ru/LC_MESSAGES/func.po -o po/ru/LC_MESSAGES/app.mo
+
+pybabel update -D app -i po/func.pot -l ru -d po -o po/ru/LC_MESSAGES/func.po
+
+strace -foo -efile python3 main.py
+fgrep .mo o
+
+LC_ALL=en python3 main.py
+
+sphinx-quickstart
+make html
+firefox build/html/index.html
+cd source
+sphinx-build -M html "source" "build"
