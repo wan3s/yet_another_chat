@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: only77nt@gmail.com\n"
-"POT-Creation-Date: 2021-05-05 12:10+0300\n"
+"POT-Creation-Date: 2021-05-05 15:13+0300\n"
 "PO-Revision-Date: 2021-05-05 12:19+0300\n"
 "Last-Translator: Korotkov Boris <only77nt@gmail.com>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: module/func.py:5
+#: module/func.py:20
 msgid "Hello world!"
 msgstr "Привет мир!"
 
