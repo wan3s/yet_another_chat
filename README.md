@@ -20,3 +20,7 @@
 
 Схематичный интерфейс:
 ![image](https://user-images.githubusercontent.com/38588985/113776663-d0aba180-9732-11eb-932b-b1810fbfb401.png)
+
+
+Инструкция для запуска монги на MacOS:
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
