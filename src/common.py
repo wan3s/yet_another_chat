@@ -2,7 +2,12 @@ import dataclasses
 import datetime
 import hashlib
 import pymongo
+import gettext
+import sys
+import os.path
 
+datapath = os.path.dirname(sys.argv[0])
+gettext.install('app', os.path.join('po'), names=("ngettext",))
 
 @dataclasses.dataclass(frozen=True)
 class User:
@@ -26,7 +31,7 @@ class Context:
         messages = list(self._db.messages.find(query))
         msg_ids = []
         if len(messages) == 0:
-            print('You have not any new messages')
+            print(_('You have not any new messages'))
             return
         for msg in messages:
             sender = self._db.users.find_one(
@@ -64,8 +69,8 @@ class Context:
         receiver_login = input('Write receiver login >>> ')
         receiver = self._db.users.find_one({'login': receiver_login})
         if not receiver:
-            raise RuntimeError('Can\'t find any user with such login!')
-        msg_text = input('Write your message >>> ')
+            raise RuntimeError(_('Can\'t find any user with such login!'))
+        msg_text = input(_('Write your message >>> '))
         res = self._db.messages.insert_one(
             {
                 'receiver_id': receiver['_id'],
@@ -86,7 +91,7 @@ class Context:
         }
         user_data = self._db.users.find_one(query)
         if not user_data:
-            raise RuntimeError('Invalid login and password!')
+            raise RuntimeError(_('Invalid login and password!'))
         return User(**user_data)
 
 

@@ -1,0 +1,35 @@
+# Translations template for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"Report-Msgid-Bugs-To: only77nt@gmail.com\n"
+"POT-Creation-Date: 2021-06-03 13:19+0300\n"
+"PO-Revision-Date: 2021-06-03 13:19+0300\n"
+"Last-Translator: KorotkovBS <only77nt@gmail.com\n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: src/common.py:31
+msgid "You have not any new messages"
+msgstr ""
+
+#: src/common.py:69
+msgid "Can't find any user with such login!"
+msgstr ""
+
+#: src/common.py:70
+msgid "Write your message >>> "
+msgstr ""
+
+#: src/common.py:91
+msgid "Invalid login and password!"
+msgstr ""
+
