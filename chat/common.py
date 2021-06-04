@@ -62,7 +62,7 @@ class Context:
                 'password': hashlib.md5(self._password.encode('utf-8')).hexdigest()
             }
         )
-        print(res)
+        print('Use was succefully created')
 
     def send_new_message(self):
         current_user = self._get_user_data()
@@ -80,9 +80,7 @@ class Context:
                 'ts': datetime.datetime.utcnow()
             }
         )
-        print(res)
-        
-
+        print('Message was succefully sent')
 
     def _get_user_data(self):
         query = {
@@ -98,5 +96,3 @@ class Context:
 def create_context(login, password):
     client = pymongo.MongoClient()
     return Context(client.chat_db, login, password)
-
-# msg: receiver_id, sender_id, text, seen, ts

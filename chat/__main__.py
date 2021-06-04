@@ -32,8 +32,5 @@ def main():
         ctx.create_new_user()
 
 
-
-
-
 if __name__ == '__main__':
     main()
