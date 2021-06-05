@@ -1,6 +1,5 @@
 import argparse
 import pymongo
-
 import common
 
 """
@@ -10,12 +9,12 @@ Yet another chat.
 """
 
 def main():
-	"""
-	Main function.
-	Connection to the chat.
-	
-	:return: nothing
-	"""
+    """
+    Main function.
+    Connection to the chat.
+    
+    :return: nothing
+    """
     parser = argparse.ArgumentParser(description='Yet another chat')
     parser.add_argument('--new-messages', action='store_true', help='Check new messages that you\'ve received')
     parser.add_argument('--send-message', action='store_true', help='Write new message')

@@ -62,7 +62,7 @@ class Context:
                 'password': hashlib.md5(self._password.encode('utf-8')).hexdigest()
             }
         )
-        print('Use was succefully created')
+        print(_('User was succefully created'))
 
     def send_new_message(self):
         current_user = self._get_user_data()
@@ -80,7 +80,7 @@ class Context:
                 'ts': datetime.datetime.utcnow()
             }
         )
-        print('Message was succefully sent')
+        print(_('Message was succefully sent'))
 
     def _get_user_data(self):
         query = {

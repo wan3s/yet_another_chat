@@ -10,8 +10,8 @@ def task_html():
 	
 def task_pot():
 	return {
-		'actions': ['pybabel extract -o po/common.pot src/common.py'],
-		'file_dep': ['src/main.py'],
+		'actions': ['pybabel extract -o po/common.pot chat/common.py'],
+		'file_dep': ['chat/__main__.py'],
 		'targets': ['po/common.pot']
 	}
 	

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  1.0.0\n"
 "Report-Msgid-Bugs-To: only77nt@gmail.com\n"
-"POT-Creation-Date: 2021-06-03 13:19+0300\n"
+"POT-Creation-Date: 2021-06-04 10:10+0300\n"
 "PO-Revision-Date: 2021-06-03 13:19+0300\n"
 "Last-Translator: KorotkovBS <only77nt@gmail.com\n"
 "Language: ru\n"
@@ -19,19 +19,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: src/common.py:31
+#: chat/common.py:34
 msgid "You have not any new messages"
 msgstr "У вас нет никаких новых сообщений"
 
-#: src/common.py:69
+#: chat/common.py:65
+msgid "User was succefully created"
+msgstr "Пользователь был успешно создан "
+
+#: chat/common.py:72
 msgid "Can't find any user with such login!"
 msgstr "Не могу найти ни одного пользователя с таким логином!"
 
-#: src/common.py:70
+#: chat/common.py:73
 msgid "Write your message >>> "
 msgstr "Напишите свое сообщение >>>"
 
-#: src/common.py:91
+#: chat/common.py:83
+msgid "Message was succefully sent"
+msgstr "Сообщение было успешно отправлено "
+
+#: chat/common.py:92
 msgid "Invalid login and password!"
 msgstr "Неверный логин и пароль!"
 
