@@ -4,3 +4,4 @@ o
 /test_wheel.egg-info/
 .doit.*
 __pycache__
+python-virtual-environments

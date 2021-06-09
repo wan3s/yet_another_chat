@@ -13,7 +13,7 @@ import sys
 import os.path
 
 datapath = os.path.dirname(sys.argv[0])
-_ = gettext.install('app', os.path.join('po'), names=("ngettext",))
+gettext.install('app', os.path.join('po'), names=("ngettext",))
 
 
 @dataclasses.dataclass(frozen=True)
