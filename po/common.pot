@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-09 10:58+0300\n"
+"POT-Creation-Date: 2021-06-09 11:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: chat/common.py:35
+#: chat/common.py:47
 msgid "You have not any new messages"
 msgstr ""
 
-#: chat/common.py:66
+#: chat/common.py:79
 msgid "User was succefully created"
 msgstr ""
 
-#: chat/common.py:73
+#: chat/common.py:87
 msgid "Can't find any user with such login!"
 msgstr ""
 
-#: chat/common.py:74
+#: chat/common.py:88
 msgid "Write your message >>> "
 msgstr ""
 
-#: chat/common.py:84
+#: chat/common.py:98
 msgid "Message was succefully sent"
 msgstr ""
 
-#: chat/common.py:93
+#: chat/common.py:108
 msgid "Invalid login and password!"
 msgstr ""
 

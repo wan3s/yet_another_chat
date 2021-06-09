@@ -1,17 +1,15 @@
-import argparse
-import common
-
 """
-Yet another chat.
+Модуль, реализующий интерфейс работы с чатом.
 
 :copyright: DreamTeam, 2021
 """
 
+import argparse
+import common
+
 
 def main():
-    """
-    Main function.
-    Connection to the chat.
+    """Return nothing. Connection to the chat.
 
     :return: nothing
     """
@@ -42,4 +40,5 @@ def main():
 
 
 if __name__ == '__main__':
+    """Starting program."""
     main()

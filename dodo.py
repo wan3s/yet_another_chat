@@ -4,6 +4,12 @@ def task_wheel():
     }
 
 
+def task_lint():
+    return {
+        'actions': ['flake8 .', 'pydocstyle chat'],
+    }
+
+
 def task_html():
     return {
         'actions': ['sphinx-build -M html source build'],
