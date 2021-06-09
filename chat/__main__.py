@@ -1,26 +1,34 @@
-import argparse
-import pymongo
-import common
-
 """
-Yet another chat.
+Модуль, реализующий интерфейс работы с чатом.
 
 :copyright: DreamTeam, 2021
 """
 
+import argparse
+import common
+
+
 def main():
-    """
-    Main function.
-    Connection to the chat.
-    
+    """Return nothing. Connection to the chat.
+
     :return: nothing
     """
     parser = argparse.ArgumentParser(description='Yet another chat')
-    parser.add_argument('--new-messages', action='store_true', help='Check new messages that you\'ve received')
-    parser.add_argument('--send-message', action='store_true', help='Write new message')
-    parser.add_argument('--new-user', action='store_true', help='Create new user')
-    parser.add_argument('--login', help='Your login', required=True)
-    parser.add_argument('--password', help='Your password', required=True)
+    parser.add_argument('--new-messages',
+                        action='store_true',
+                        help='Check new messages that you\'ve received')
+    parser.add_argument('--send-message',
+                        action='store_true',
+                        help='Write new message')
+    parser.add_argument('--new-user',
+                        action='store_true',
+                        help='Create new user')
+    parser.add_argument('--login',
+                        help='Your login',
+                        required=True)
+    parser.add_argument('--password',
+                        help='Your password',
+                        required=True)
     args = parser.parse_args()
     ctx = common.create_context(args.login, args.password)
     if args.new_messages:
@@ -32,4 +40,5 @@ def main():
 
 
 if __name__ == '__main__':
+    """Starting program."""
     main()

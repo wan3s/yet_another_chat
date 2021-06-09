@@ -1,3 +1,9 @@
+"""
+Модуль, реализующий логику работы с чатом.
+
+:copyright: DreamTeam, 2021
+"""
+
 import dataclasses
 import datetime
 import hashlib
@@ -9,20 +15,27 @@ import os.path
 datapath = os.path.dirname(sys.argv[0])
 gettext.install('app', os.path.join('po'), names=("ngettext",))
 
+
 @dataclasses.dataclass(frozen=True)
 class User:
+    """Класс Пользователь."""
+
     _id: str
     login: str
     password: str
 
 
 class Context:
+    """Класс Контекст."""
+
     def __init__(self, db, login, password) -> None:
+        """Конструктор."""
         self._db = db
         self._login = login
         self._password = password
-    
+
     def check_new_messages(self):
+        """Проверка новых сообщений."""
         current_user = self._get_user_data()
         query = {
             'receiver_id': current_user._id,
@@ -51,6 +64,7 @@ class Context:
         self._db.messages.bulk_write(bulk_query)
 
     def create_new_user(self):
+        """Создание нового пользователя."""
         user = self._db.users.find_one({
             'login': self._login,
         })
@@ -65,6 +79,7 @@ class Context:
         print(_('User was succefully created'))
 
     def send_new_message(self):
+        """Отправка нового сообщения."""
         current_user = self._get_user_data()
         receiver_login = input('Write receiver login >>> ')
         receiver = self._db.users.find_one({'login': receiver_login})
@@ -83,6 +98,7 @@ class Context:
         print(_('Message was succefully sent'))
 
     def _get_user_data(self):
+        """Получение данных о пользователе."""
         query = {
             'login': self._login,
             'password': hashlib.md5(self._password.encode('utf-8')).hexdigest(),
@@ -94,5 +110,6 @@ class Context:
 
 
 def create_context(login, password):
+    """Создание контекста."""
     client = pymongo.MongoClient()
     return Context(client.chat_db, login, password)
