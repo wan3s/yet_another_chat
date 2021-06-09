@@ -12,6 +12,12 @@ Welcome to yet_another_chat's documentation!
    
    rules
    
+Docs
+====
+.. automodule:: chat
+   :members:
+   :undoc-members:
+   
 UI
 ==
 .. image:: _static/UI.png

@@ -7,7 +7,8 @@ import sys
 import os.path
 
 datapath = os.path.dirname(sys.argv[0])
-gettext.install('app', os.path.join('po'), names=("ngettext",))
+_ = gettext.install('app', os.path.join('po'), names=("ngettext",))
+
 
 @dataclasses.dataclass(frozen=True)
 class User:
@@ -21,7 +22,7 @@ class Context:
         self._db = db
         self._login = login
         self._password = password
-    
+
     def check_new_messages(self):
         current_user = self._get_user_data()
         query = {
