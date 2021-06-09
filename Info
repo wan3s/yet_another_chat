@@ -26,10 +26,5 @@ pip install ~/yet_another_chat/dist/test_wheel-0.0.1-py3-none-any.whl
 
 python3 -m module - Почему-то не печатает ничего
 
-Проблемы:
-- Не понятно как работают docstrings (скорее всего связано с модулями)
-- Не докидывается перевод в wheel
-- В переводах нужно разбираться с именами (по умолчанию они привязываются к -D)
-
 flake8 .
 pydocstyle chat

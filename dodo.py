@@ -39,6 +39,12 @@ def task_mo():
     }
 
 
+def task_test():
+    return {
+        'actions': ['pytest chat/test.py'],
+    }
+
+
 def task_all():
     return {
         'actions': ['echo All'],
