@@ -43,6 +43,6 @@ msgstr "Сообщение было успешно отправлено "
 msgid "Invalid login and password!"
 msgstr "Неверный логин и пароль!"
 
-#: chat/test.py:9
-msgid "Invalid login and password!"
-msgstr "Неверный логин и пароль!"
+#:
+msgid "Authorization"
+msgstr "Авторизация"

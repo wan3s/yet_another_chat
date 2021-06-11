@@ -28,15 +28,14 @@ class User:
 class Context:
     """Класс Контекст."""
 
-    def __init__(self, db, login, password) -> None:
+    def __init__(self, db) -> None:
         """Конструктор."""
         self._db = db
-        self._login = login
-        self._password = password
+        self._current_user = None
 
     def check_new_messages(self):
         """Проверка новых сообщений."""
-        current_user = self._get_user_data()
+        current_user = self._get_current_user()
         query = {
             'receiver_id': current_user._id,
             'seen': False,
@@ -63,24 +62,24 @@ class Context:
         ]
         self._db.messages.bulk_write(bulk_query)
 
-    def create_new_user(self):
+    def create_new_user(self, login, password):
         """Создание нового пользователя."""
         user = self._db.users.find_one({
-            'login': self._login,
+            'login': login,
         })
         if user:
-            raise RuntimeError(f'Login {self._login} already used!')
+            raise RuntimeError(f'Login {login} already used!')
         res = self._db.users.insert_one(
             {
-                'login': self._login,
-                'password': hashlib.md5(self._password.encode('utf-8')).hexdigest()
+                'login': login,
+                'password': hashlib.md5(password.encode('utf-8')).hexdigest()
             }
         )
         print(_('User was succefully created'))
 
     def send_new_message(self):
         """Отправка нового сообщения."""
-        current_user = self._get_user_data()
+        current_user = self._get_current_user()
         receiver_login = input('Write receiver login >>> ')
         receiver = self._db.users.find_one({'login': receiver_login})
         if not receiver:
@@ -95,21 +94,28 @@ class Context:
                 'ts': datetime.datetime.utcnow()
             }
         )
-        print(_('Message was succefully sent'))
+        print(_('Message was succesfully sent'))
 
-    def _get_user_data(self):
+    def _get_current_user(self):
         """Получение данных о пользователе."""
+        if self._current_user is None:
+            raise RuntimeError('Emprty current user data!')
+        return self._current_user
+
+    def login_user(self, login, password):
+        """Авторизация пользователя."""
         query = {
-            'login': self._login,
-            'password': hashlib.md5(self._password.encode('utf-8')).hexdigest(),
+            'login': login,
+            'password': hashlib.md5(password.encode('utf-8')).hexdigest(),
         }
         user_data = self._db.users.find_one(query)
         if not user_data:
             raise RuntimeError(_('Invalid login and password!'))
-        return User(**user_data)
+        self._current_user = User(**user_data)
+        return self._current_user
 
 
-def create_context(login, password):
+def create_context():
     """Создание контекста."""
     client = pymongo.MongoClient()
-    return Context(client.chat_db, login, password)
+    return Context(client.chat_db)
