@@ -6,4 +6,4 @@ def test_empty_login_and_pswd():
         ctx = common.create_context('', '')
         ctx.check_new_messages()
     except RuntimeError as err:
-        assert str(err) == 'Неверный логин и пароль!'
+        assert str(err) == 'Invalid login and password!'
