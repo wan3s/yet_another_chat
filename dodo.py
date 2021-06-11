@@ -41,7 +41,7 @@ def task_mo():
 
 def task_test():
     return {
-        'actions': ['pytest chat/test.py'],
+        'actions': ['pytest -vv chat/test.py'],
     }
 
 

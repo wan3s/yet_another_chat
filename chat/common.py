@@ -45,6 +45,7 @@ class Context:
         }
         messages = list(self._db.messages.find(query))
         msg_ids = []
+        messages_list = []
         if len(messages) == 0:
             print(_('You have not any new messages'))
             return
@@ -58,12 +59,14 @@ class Context:
             text = msg['text']
             ts = msg['ts']
             print(f'{sender_login} at {ts}: {text}')
+            messages_list.append(f'{sender_login} at @@@: {text}')
             msg_ids.append(msg['_id'])
         bulk_query = [
             pymongo.UpdateOne({'_id': msg_id}, {'$set': {'seen': True}})
             for msg_id in msg_ids
         ]
         self._db.messages.bulk_write(bulk_query)
+        return messages_list
 
     def create_new_user(self):
         """Создание нового пользователя."""
@@ -80,15 +83,17 @@ class Context:
         )
         print(_('User was succefully created'))
 
-    def send_new_message(self):
+    def send_new_message(self, receiver_login=None, msg_text=None):
         """Отправка нового сообщения."""
         current_user = self._get_user_data()
-        receiver_login = input('Write receiver login >>> ')
+        if receiver_login is None:
+            receiver_login = input('Write receiver login >>> ')
         receiver = self._db.users.find_one({'login': receiver_login})
         if not receiver:
             raise RuntimeError(_('Can\'t find any user with such login!'))
-        msg_text = input(_('Write your message >>> '))
-        res = self._db.messages.insert_one(
+        if msg_text is None:
+            msg_text = input(_('Write your message >>> '))
+        self._db.messages.insert_one(
             {
                 'receiver_id': receiver['_id'],
                 'sender_id': current_user._id,
