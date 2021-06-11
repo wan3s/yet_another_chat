@@ -1,5 +1,5 @@
 """
-Почему-то подтягиваются докстринги только из __init__.py.
+Module init.
 
-:return: nothing
+:copyright: DreamTeam, 2021
 """

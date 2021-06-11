@@ -1,0 +1,3 @@
+#: chat/test.py:14
+msgid "Invalid login and password!"
+msgstr "Неверный логин и пароль!"

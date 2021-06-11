@@ -12,7 +12,7 @@ def task_lint():
 
 def task_html():
     return {
-        'actions': ['sphinx-build -M html source build'],
+        'actions': ['sphinx-build -M html docs build'],
     }
 
 
@@ -41,7 +41,7 @@ def task_mo():
 
 def task_test():
     return {
-        'actions': ['pytest chat/test.py'],
+        'actions': ['pytest -vv chat/test.py'],
     }
 
 

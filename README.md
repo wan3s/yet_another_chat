@@ -36,16 +36,8 @@ LC_ALL=en python3 chat --new-messages --login boris --password 1234 (получ�
 5) doit test
 6) 
 ```
-pip install virtualenv
-mkdir python-virtual-environments && cd python-virtual-environments
 python3 -m venv env 
-source env/bin/activate (подняли чистое окружение)
-cd ..
-pip install doit
-pip install pydocstyle
-doit wheel
-pip install ~/yet_another_chat/dist/test_wheel-0.0.1-py3-none-any.whl (установили приложение)
-python3 chat --new-messages --login boris --password 1234
-pip install -U pytest
-doit test
+source env/bin/activate
+pip3 install dist/yachat-0.0.1-py3-none-any.whl
+python3 -m chat --new-messages --login boris --password 1234
 ```
