@@ -7,20 +7,11 @@ Welcome to yet_another_chat's documentation!
 ============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
-   rules
-   
-Docs
-====
-.. automodule:: chat
-   :members:
-   :undoc-members:
-   
-UI
-==
-.. image:: _static/UI.png
+   program
+
 
 Indices and tables
 ==================

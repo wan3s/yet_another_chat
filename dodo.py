@@ -12,7 +12,7 @@ def task_lint():
 
 def task_html():
     return {
-        'actions': ['sphinx-build -M html source build'],
+        'actions': ['sphinx-build -M html docs build'],
     }
 
 

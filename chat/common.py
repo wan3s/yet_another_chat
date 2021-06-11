@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
-Модуль, реализующий логику работы с чатом.
+Chat engine.
 
 :copyright: DreamTeam, 2021
 """
