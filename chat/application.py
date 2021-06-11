@@ -10,6 +10,7 @@ import argparse
 
 from . import common
 
+
 def run():
     """Return nothing. Connection to the chat.
 

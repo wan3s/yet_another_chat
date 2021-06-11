@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Run app.
 
+:copyright: DreamTeam, 2021
+"""
 from . import application
 
 
